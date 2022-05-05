@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;500;600;800&family=Caudex:wght@700&family=Orbitron:wght@700&display=swap');
+body {
+    font-family: 'Catamaran', sans-serif;
+}
+
+body, html {
+    height: 100vh;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    grid-template-rows: 98px 1fr;
+    height: 100%;
+    gap: 60px
+}
+
+.content-sidebar {
+    border-right: 1px solid #505050;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* Показываем где распологается шапка сайта */
+.content-header {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 60px;
+}
+:root {
+    --swiper-theme-color: #606060;
+    }
+.content-main{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+}
+/* Вывод кнопки */
+.content-sidebar__button{
+    display: block;
+    width: 100%;
+    height: 98px;
+    border: none;
+    position: relative;
+}
+.content-sidebar__button::after {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/border-width.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+}
+
+/* Соц сети */
+.content-sidebar__list {
+    list-style: none;
+    margin-bottom: 60px;
+}
+.content-sidebar__item {
+    margin-top: 50px;
+    padding-left: 0;
+}
+.content-sidebar__link {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.content-sidebar__vk {
+    background-image: url(../images/vk.svg);
+}
+
+.content-sidebar__inst {
+    background-image: url(../images/instagram1.svg);
+}
+
+
+/* Логотип сайдбара  */
+.content-header__logo{
+    display: block;
+    width: 200px;
+    height: 31px;
+    background-image: url(../images/logo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Меню сайта */
+.content-header__list{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.content-header__item{
+    margin-left: 67px;
+}
+/* Уберём лишнее растояние кнопки*/
+.content-header__item:first-child{
+    margin-left: 0;
+}
+.content-header__link{
+    color: #000000;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative;
+}
+
+.content-header__link::after{
+    content: '';
+    width: 21px;
+    height: 2px;
+    background-color: black;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    opacity: 0;
+    transition: 0.2s;
+}
+.content-header__link.active {
+    font-weight: 800;
+}
+/*hover - говорит что появляется при наведение чёрточка */
+.content-header__link.active::after,
+.content-header__link:hover::after {
+    opacity: 1;
+}
+
+.content-header__link.wallet {
+    background-image: url(../images/cart.svg);
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* Свайпер */
+.swiper {
+    height: calc(93vh - 98px);
+    width: 150vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.swiper-body {
+    margin-left: 50%;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: inherit;
+    position: absolute;
+    left: 60px;
+    width: 203px;
+    flex-basis: 73px;
+}
+
+.swiper-wrapper{
+    flex-basis: 1280px;
+    width: 203px;
+    position: inherit;
+}
+
+
+.swiper-pagination-bullet {
+    background: transparent;
+}
+
+
+/* Нижний блок */
+
+.swiper-footer{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(289deg, rgb(201 201 201 / 45%) 1%, rgba(66, 66, 66, 0.46)
+    80.04%, rgba(66, 66, 66, 0) 99%);
+    backdrop-filter: blur(47.2917px);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+/* Обложка */
+.swiper-cover {
+    width: 225px;
+    height: 225px;
+    position: relative;
+    overflow: hidden;
+}
+
+.swiper-cover__img {
+    width: 225px;
+    height: 225px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+.swiper-info {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 5%;
+    flex-basis: calc(100% - 110px);
+    padding-left: 60px;
+}
+
+.swiper-info__author {
+    grid-column: 1 / 9;
+    grid-row: 1 / 2;
+    font-family: 'Caudex', serif;
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 40%;
+}
+
+.swiper-info__item {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    color: #000000;
+    text-align: center;
+
+}
+.swiper-info__item span{
+    display: block;
+    font-family: 'Catamaran', sans-serif;
+    font-size: 17px;
+    color: #000000;
+    margin-top: 11px;
+}
+.swiper-info__item__color{
+    color: #ad732a;
+    font-style: italic;
+
+}
+/* Картинка 1 */
+.swiper-slide__image1 {
+    position: absolute;
+    left: 25%;
+    top: 1%;
+    width: 56%;
+    bottom: 0;
+}
+
+
+.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.swiper-slide__image2 {
+    position: absolute;
+    left: 30%;
+    top: -4px;
+    width: 36%;
+    bottom: 0;
+}
+
+.swiper-slide__image3 {
+    position: absolute;
+    left: 34%;
+    top: -4px;
+    width: 29%;
+    bottom: 0;
+}
+
+.swiper-slide__image4 {
+    position: absolute;
+    left: 20%;
+    top: -4px;
+    width: 64%;
+    bottom: 0;
+}
+/* Стрелочки */
+
+.swiper-button-prev:after,.swiper-button-next:after,  .swiper-rtl .swiper-button-next:after {
+    content: none;
+}
+.swiper-button-next, .swiper-button-prev{}
+/* 2 продукт */
+
+/* карта гугл */
+iframe {
+    overflow: hidden;
+    width: 52%;
+    height: 480px;
+    position: absolute;
+    margin: 0 auto;
+}
+
+.about-text{
+    font-family: 'Times New Roman', sans-serif;
+    font-size: 22px;
+    padding-left: 63%;
+}
